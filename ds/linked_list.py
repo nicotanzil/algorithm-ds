@@ -50,6 +50,16 @@ class LinkedList:
     newNode.next = temp.next
     temp.next = newNode
 
+  def reverse(self): 
+    prev = None
+    current = self.head
+    while current: 
+      next = current.next
+      current.next = prev
+      prev = current
+      current = next
+    self.head = prev
+
 if __name__ == "__main__": 
   linkedList = LinkedList()
 
@@ -72,4 +82,7 @@ if __name__ == "__main__":
   linkedList.print()
 
   linkedList.delete(3)
+  linkedList.print()
+
+  linkedList.reverse()
   linkedList.print()
